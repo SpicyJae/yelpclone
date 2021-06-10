@@ -1,43 +1,44 @@
-
 .top-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 1.5rem;
     width: 100%;
-}
-
-.left > * {
-    margin-right: 1.5rem;
+    padding: 0 15px;
+  }
+  
+  .left > * {
+    margin-right: 50px;
     color: white;
     font-size: 14px;
     font-weight: 700;
     line-height: 1.28571em;
-}
-
-.left > *:hover{
+  }
+  
+  .left > *:hover {
     text-decoration: underline;
-}
-
-.right {
+  }
+  
+  .right {
     display: flex;
+    flex-direction: row;
     align-items: center;
-}
-.right > * {
+    margin-left: 400px;
+  }
+  .right > * {
     color: white;
     margin-left: 1.5rem;
     font-size: 14px;
     font-weight: 700;
     line-height: 1.28571em;
     margin-right: 30px;
-    
-}
-
-.right > *:hover{
+  }
+  
+  .right > *:hover {
     text-decoration: underline;
-}
-
-.ybtn {
+  }
+  
+  .ybtn {
     display: inline-block;
     vertical-align: middle;
     margin: 0;
@@ -55,6 +56,7 @@
     margin-top: -2px;
     padding: 7px 24px 8px;
     white-space: nowrap;
-    transition: all .6s;
-    transition-property: background-color,background-position,background-size,border-color;
-}
+    transition: all 0.6s;
+    transition-property: background-color, background-position, background-size,
+      border-color;
+  }

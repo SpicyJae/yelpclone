@@ -1,24 +1,22 @@
-.suggestions{
+.suggestions {
     display: flex;
-    
-}
-
-.suggestion{
-    font-size:.75rem;
+    margin-bottom: 255px;
+  }
+  
+  .suggestion {
+    font-size: 0.75rem;
     margin-left: 8px;
     margin-right: 2.5rem;
     color: white;
     font-weight: 700;
     background-color: transparent;
     border: none;
-}
-
-.suggestion > *{
+  }
+  
+  .suggestion > * {
     margin-right: 10px;
-}
-
-.suggestion:hover{
+  }
+  
+  .suggestion:hover {
     cursor: pointer;
-}
-
-
+  }

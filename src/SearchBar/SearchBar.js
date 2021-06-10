@@ -1,10 +1,14 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './SearchBar.module.css';
 
 export function SearchBar(props){
+
     const [term, setTerm] = useState(props.term || '');
     const [location, setLocation] = useState(props.location || '');
 
+    useEffect(() => {
+        setLocation(props.location);
+    }, [props.location]);
 
     function submit(event){
         if(typeof props.search === 'function'){

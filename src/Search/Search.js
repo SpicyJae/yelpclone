@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavBar } from '../NavBar/NavBar';
 import { SubNav } from '../NavBar/SubNav/SubNav';
 import { SearchResultsSummary } from './SearchResultsSummary/SearchResultsSummary';
@@ -7,8 +7,11 @@ import useReacterRouter from 'use-react-router';
 import {useBusinessSearch} from '../hooks/yelp-api/useBusinessSearch';
 import { SearchFilter } from './SearchFilter/SearchFilter';
 import styles from './Search.module.css';
+import { Maps } from './Maps/Maps';
 
 export function Search(){
+
+    const [userScrolled, setUserScrolled] = useState(false);
 
     const {location, history} = useReacterRouter();
     const params = new URLSearchParams(location.search);
@@ -19,7 +22,22 @@ export function Search(){
     if (!term || !locationParam){
         history.push('/')
     }
+/*
+    useEffect(() => {
+        //figure out if user has scrolled
+        if(window.blablah ) {
+            setUserScrolled(true);
+        }
 
+        if (scrolled up) {
+
+        }
+    }, [window]) 
+
+    if (scrolled) {
+        setUserScrolled(true);
+    }
+*/
     function search(term, location){
         const encodedTerm = encodeURI(term);
         const encodedLocation = encodeURI(location);
@@ -28,10 +46,13 @@ export function Search(){
     }
 
     return(
-        <div className={styles['main-container']}>
+        <div className={styles['fixed-container']}>
             <NavBar term={term} location={locationParam} search={search}/>
-            <SubNav/>
+            { !userScrolled && <SubNav/>}
             <SearchFilter/>
+            <div className={styles.map}>
+                <Maps/>
+            </div>
             <div className={styles.displayContainer}>
                 <SearchResultsSummary term={searchParams.term} 
                                       location={searchParams.location} 
@@ -39,6 +60,7 @@ export function Search(){
                                       shownResults={businesses ? businesses.length : 0}/>
                 <SearchResults businesses={businesses}/>
             </div>
+           
         </div>
     );
 }

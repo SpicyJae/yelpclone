@@ -9,7 +9,17 @@
 }
 
 .displayContainer{
+    margin-top: 200px;
     position: relative;
     left:5.3%;
     top:300px;
+    overflow: hidden;
+}
+
+.map{
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    right:2%;
+    top:20%;
 }

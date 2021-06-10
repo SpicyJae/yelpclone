@@ -11,3 +11,15 @@ export function get(path, queryParams){
         }
     });
 }
+
+export function bizget(path, queryParams){
+    /*
+    return fetch(`${API_BASE_URL}${path}/${queryParams}` ,{
+        headers: {
+            Authorization: `Bearer ${BEARER_TOKEN}`,
+            Origin: 'localhost',
+            withCredentials: true, 
+        }
+    });
+    */
+}

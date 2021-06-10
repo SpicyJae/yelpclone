@@ -1,32 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './DiffCities.module.css';
 
-export function DiffCities() {
+export function DiffCities(props) {
+
     return (
         <div className={styles['title-text']}>
-            <p>Yelp Irvine</p>
+            <p>Yelp {props.location}</p>
             <div className={styles.cities}>
-                <div>
+                <button onClick={() => props.changeCity('San Jose')}>
                     San Jose
-                </div> 
-                <div>
+                </button>
+                <button onClick={() => props.changeCity('San Francisco')}>
                     San Francisco
-                </div>
-                <div>
+                </button>
+                <button onClick={() => props.changeCity('New York')}>
                     New York
-                </div>
-                <div>
-                    Los Angeles
-                </div>
-                <div>
+                </button>
+                <button onClick={() => props.changeCity('Chicago')}>
                     Chicago
-                </div>
-                <div>
+                </button>
+                <button onClick={() => props.changeCity('Palo Alto')}>
                     Palo Alto
-                </div>
-                <div>
+                </button>
+                <button onClick={() => props.changeCity('Oakland')}>
+                    Oakland
+                </button>
+                <button>
                     More Cities
-                </div>
+                </button>
             </div>
         </div>
     )
