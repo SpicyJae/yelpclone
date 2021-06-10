@@ -1,0 +1,21 @@
+.title-text{
+    font-weight: 700;
+    color: red;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.cities{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cities > *{
+    margin-right: 50px;
+}
+
+.cities > *:hover{
+    text-decoration: underline;
+}

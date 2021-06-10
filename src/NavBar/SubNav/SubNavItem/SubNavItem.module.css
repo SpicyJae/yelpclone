@@ -1,0 +1,9 @@
+.sub-nav-item{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.sub-nav-item > * {
+    margin-right: 4px;
+}

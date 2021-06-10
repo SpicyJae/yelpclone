@@ -1,0 +1,36 @@
+.logo{
+    width: 180px;
+    height: 80px;
+    margin: 50px 0;
+}
+
+.search-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-area > *{
+    margin-top: 20px;
+    font-weight: 700;
+}
+.background{
+    
+    height: 600px;
+    width: 500px;
+    background-size: 500px 600px;
+    background-position: center;
+}
+
+.margin{
+    margin-top: 300px;
+}
+.landing{
+    display: flex;
+    justify-content: center;
+    background-image: url(https://s3-media0.fl.yelpcdn.com/bphoto/J4bBEXXBIHmYLl50X1l72g/o.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    width: 2000px;
+}

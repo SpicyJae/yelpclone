@@ -1,0 +1,19 @@
+.fixedContainer {
+    position: fixed;
+    width:250px;
+    height: 900px;
+    left:5.3%;
+    top:20%;
+    margin-left:-100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.filter-category{
+    margin-bottom:50px;
+}
+
+.mgtop{
+    margin-bottom: 20px;
+}

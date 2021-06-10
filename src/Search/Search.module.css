@@ -1,0 +1,15 @@
+.fixedContainer {
+    background-color:#ddd;
+    position: fixed;
+    width:250px;
+    height: 900px;
+    left:5.3%;
+    top:19%;
+    margin-left:-100px;
+}
+
+.displayContainer{
+    position: relative;
+    left:5.3%;
+    top:300px;
+}

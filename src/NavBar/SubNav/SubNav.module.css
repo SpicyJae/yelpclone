@@ -1,0 +1,10 @@
+.subnav-middle{
+
+    position: fixed;
+    width:600px;
+    height: 100px;
+    left:30%;
+    top:12%;
+    margin-left:-100px;
+    display: flex
+}
