@@ -37,7 +37,7 @@ export function LandingPage(){
         const encodedTerm = encodeURI("hot_and_new");
         const encodedLocation = encodeURI(location);
         performSearch({attributes, location});
-        console.log("hello from Irvine");
+        console.log(`hello from ${location}`);
     }
 
     return(
@@ -46,7 +46,7 @@ export function LandingPage(){
                     <TopNav/>
                     <img src={logo} className={styles.logo} alt='logo'/>
                     <SearchBar search={search} location={locationSet}/>
-                    <SearchSuggestions search={search}/>
+                    <SearchSuggestions search={search} location={locationSet}/>
                     <BestBusinesses location={locationSet}/>
                     <DiffCities changeCity={changeCity} location={locationSet}/>
                     <HotAndNewBusinesses businesses={businesses}/>

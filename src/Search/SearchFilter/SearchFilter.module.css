@@ -16,3 +16,13 @@
 .mgtop{
     margin-bottom: 20px;
 }
+
+.list{
+    display: flex;
+    flex-direction: column;
+}
+
+.price_button :active{
+    color: gray;
+    background-color: gray;
+}

@@ -4,9 +4,8 @@ import * as api from './api';
 export function BusinessDetailSearch(id){
     const [response, setResponse] = useState([]);
     const [searchParams, setSearchParams] = useState(id);
-
-
-    setResponse([]);
+    console.log("Called BusinessDetailSearch");
+    /*
     const fetchData = async () =>{
         try{
             const rawData = await api.bizget('/businesses', searchParams);
@@ -18,6 +17,6 @@ export function BusinessDetailSearch(id){
         }
     };
     fetchData();
-    
+    */
     return response;
 }

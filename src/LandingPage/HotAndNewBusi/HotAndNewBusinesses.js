@@ -2,12 +2,14 @@ import React from 'react';
 import { HotAndNewBusiness } from './HotAndNewBusiness';
 import styles from './HotAndNewBusinesses.module.css';
 
+
 export function HotAndNewBusinesses(props){
+
     if(!props.businesses || !props.businesses.length){
         return (<div></div>);
     }
     const result = props.businesses.slice(0,3);
-    const HotAndNewBusinessResults = result.map(b => <HotAndNewBusiness key={b.id} business={b}/>)
+    const HotAndNewBusinessResults = result.map(b => <HotAndNewBusiness id={b.id} business={b}/>)
 
     return(
         <div className={styles.display}>

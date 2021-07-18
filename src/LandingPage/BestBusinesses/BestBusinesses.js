@@ -3,12 +3,12 @@ import styles from './BestBusinesses.module.css';
 import {Link} from 'react-router-dom';
 import useReactRouter from 'use-react-router';
 
-export function BestBusinesses(){
+export function BestBusinesses(props){
     const {history} = useReactRouter();
 
     function submit(name){
         name = encodeURI(name);
-        history.push(`/search?find_desc=${name}&find_loc=irvine`);
+        history.push(`/search?find_desc=${name}&find_loc=${props.location}`);
     }
 
     return (

@@ -4,13 +4,13 @@ import styles from './SearchFilter.module.css';
 export function SearchFilter() {
     return (
         <div className={styles.fixedContainer}>
-            <div className={styles['filter-category']}><p className={styles.mgtop}><strong>Filters</strong></p>
+            <div className={styles['filter-category']} className={styles.price_button}><p className={styles.mgtop}><strong>Filters</strong></p>
                 <button className="button is-small">$</button>
                 <button className="button is-small">$$</button>
                 <button className="button is-small">$$$</button>
                 <button className="button is-small">$$$$</button>
             </div>
-            <div className={styles['filter-category']}><p className={styles.mgtop}><strong>Suggested</strong></p>
+            <div className={styles['filter-category']} className={styles.list}><p className={styles.mgtop}><strong>Suggested</strong></p>
                 <label className="checkbox">
                     <input type="checkbox" />Open Now
                 </label>

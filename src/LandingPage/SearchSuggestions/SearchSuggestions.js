@@ -9,7 +9,7 @@ export function SearchSuggestions(props){
 
     function submit(name){
         name = encodeURI(name);
-        history.push(`/search?find_desc=${name}&find_loc=irvine`);
+        history.push(`/search?find_desc=${name}&find_loc=${props.location}`);
     }
 
     return(

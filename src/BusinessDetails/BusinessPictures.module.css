@@ -1,0 +1,50 @@
+
+.picture_size > *{
+    width: 33%;
+    height: 400px;
+}
+
+.picture_text{
+    position: relative;
+    bottom: 200px;
+    left: 22%;
+}
+
+.verify_pic{
+    width: 10px;
+    height: 10px;
+}
+
+.bullet_point{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.business_name_text{
+    font-weight: 900;
+    font-size: xx-large;
+    color: white;
+}
+
+.details > *{
+    font-weight: 700;
+    color: white;
+    white-space: normal;
+    margin-right: 1%;
+}
+
+.open{
+    color: rgb(22, 165, 22);
+    font-weight: 700;
+}
+
+.closed{
+    color: red;
+    font-weight: 700;
+}
+
+.hours {
+    color: white;
+    font-weight: 700;
+}

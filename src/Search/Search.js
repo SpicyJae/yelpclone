@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavBar } from '../NavBar/NavBar';
 import { SubNav } from '../NavBar/SubNav/SubNav';
 import { SearchResultsSummary } from './SearchResultsSummary/SearchResultsSummary';
@@ -11,33 +11,30 @@ import { Maps } from './Maps/Maps';
 
 export function Search(){
 
-    const [userScrolled, setUserScrolled] = useState(false);
+    const [userScrolled, setUserScrolled] = useState(true);
 
     const {location, history} = useReacterRouter();
     const params = new URLSearchParams(location.search);
     const term = params.get('find_desc');
     const locationParam = params.get('find_loc');
     const [businesses, amountResults, searchParams, performSearch] = useBusinessSearch(term, locationParam);
-    
+    const [scrolling, setScrolling] = useState(false);
+    const [scrollTop, setScrollTop] = useState(0);
+
     if (!term || !locationParam){
         history.push('/')
     }
-/*
+
     useEffect(() => {
-        //figure out if user has scrolled
-        if(window.blablah ) {
-            setUserScrolled(true);
-        }
+        const onScroll = e => {
+          setScrollTop(e.target.documentElement.scrollTop);
+          setScrolling(e.target.documentElement.scrollTop > scrollTop);
+        };
+        window.addEventListener("scroll", onScroll);
+    
+        return () => window.removeEventListener("scroll", onScroll);
+      }, [scrollTop]);
 
-        if (scrolled up) {
-
-        }
-    }, [window]) 
-
-    if (scrolled) {
-        setUserScrolled(true);
-    }
-*/
     function search(term, location){
         const encodedTerm = encodeURI(term);
         const encodedLocation = encodeURI(location);
@@ -45,10 +42,11 @@ export function Search(){
         performSearch({term, location});
     }
 
+
+
     return(
         <div className={styles['fixed-container']}>
-            <NavBar term={term} location={locationParam} search={search}/>
-            { !userScrolled && <SubNav/>}
+            { scrollTop == 0 && <SubNav/>}
             <SearchFilter/>
             <div className={styles.map}>
                 <Maps/>
@@ -60,7 +58,7 @@ export function Search(){
                                       shownResults={businesses ? businesses.length : 0}/>
                 <SearchResults businesses={businesses}/>
             </div>
-           
+            <NavBar term={term} location={locationParam} search={search}/>
         </div>
     );
 }

@@ -5,24 +5,20 @@ import {BusinessRating} from '../../../BusinessRating/BusinessRating';
 import {BusinessDetailSearch} from '../../../hooks/yelp-api/businessDetailSearch';
 
 export function SearchResult(props) {
-    const key = props.key;
-    const businessDetails = BusinessDetailSearch(key);
+
+    //const businessDetails = BusinessDetailSearch(key);
     const tags = props.business.categories.map(category => (<span className={`tag ${styles['business-tag']}`} key={category.title}>{category.title}</span>))
     //const addressLines = props.business.location.address3 == '' ? <p>{props.business.location.address3}</p> : <p>{props.business.location.address1}</p>
     //const addressLines = props.business.location.display_address.map(addressLine => <p key={props.business.id + addressLine}>{addressLine}</p>);
     const {location, history} = useReacterRouter();
 
-    function detailSearch(key){
-        const encodedKey = encodeURI(key);
-        BusinessDetailSearch(encodedKey);
-        history.push('/biz');
-    }
+
     if(!props.business){
         return (<div/>);
     }
 
     return (
-        <button onClick={()=> detailSearch(props.key)} className={styles['search-result']}>
+        <div onClick={() => props.search(props.id)} className={styles['search-result']}>
             <img src={props.business.image_url} alt='businessImage' className={styles['business-image']} />
             <div className={styles['business-info']}>
                 <h2 className="subtitle">{props.business.name}</h2>
@@ -32,6 +28,6 @@ export function SearchResult(props) {
                 <p>{props.business.display_phone}</p>
                 <p>{props.business.location.address1}</p>
             </div>
-        </button>
+        </div>
     );
 }

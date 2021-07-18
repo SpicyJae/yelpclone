@@ -1,0 +1,14 @@
+.profile_picture{
+    height: 75px;
+    width: 75px;
+    border-radius: 50px;
+}
+
+.profile_name{
+    font-weight: 700;
+}
+
+.rating{
+    display: flex;
+    align-items: flex-start;
+}
